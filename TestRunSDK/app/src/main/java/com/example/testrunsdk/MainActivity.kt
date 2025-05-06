@@ -17,10 +17,10 @@ class MainActivity : AppCompatActivity() {
         btnInternationalTopup.setOnClickListener {
             VodQaSDK.startInternationalTopup(
                 this,
-                secretKey = "b7435e09bf97c1be53acb407102e245ad9f960fa874df9e18de7b1f7c4486540",
+                secretKey = "your_secret_key",
                 serviceCode = "INT_TOP_UP",
-                mobileNumber = "88776630",
-                iPayCustomerID = "13"
+                mobileNumber = "xxxxxxxx",
+                iPayCustomerID = "x"
             )
         }
 
@@ -28,11 +28,11 @@ class MainActivity : AppCompatActivity() {
         btnSavedTopup.setOnClickListener {
             VodQaSDK.openSavedTopup(
                 this,
-                secretKey = "b7435e09bf97c1be53acb407102e245ad9f960fa874df9e18de7b1f7c4486540",
+                secretKey = "your_secret_key",
                 serviceCode = "INT_TOP_UP",
-                mobileNumber = "88776630",
-                iPayCustomerID = "13",
-                savedBillId = "2"
+                mobileNumber = "xxxxxxxx",
+                iPayCustomerID = "x",
+                savedBillId = "x"
             )
         }
 
