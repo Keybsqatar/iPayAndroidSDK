@@ -1,6 +1,6 @@
 # iPayAndroidSDK Integration Guide
 
-This document explains how to integrate and use the VodQaSDK in your Android application. It covers permissions, Settings setup, Gradle setup, and the two main entry points: International Top‑up,Saved Top‑up and Digital Vouchers.
+This document explains how to integrate and use the VodQaSDK in your Android application. It covers permissions, Settings setup, Gradle setup, and the two main entry points: International Top‑up,Saved Top‑up, Digital Vouchers and Utility Payment.
 
 1. Add the AAR
 Copy VodQaSDK.aar into your app/libs/ folder.
@@ -59,12 +59,12 @@ dependencies {
 In your MainActivity (or any other Context), call the SDK’s entry points:
 import com.keybs.vodqasdk.VodQaSDK
 
-6.1 International Top‑up
+6.1 Start Service Type
 ```
-VodQaSDK.startInternationalTopup(
+VodQaSDK.startServiceType(
   this,
   secretKey      = "your_secret_key",
-  serviceCode    = "INT_TOP_UP",
+  serviceCode    = "xxx", // "INT_TOP_UP", "INT_VOUCHER", "INT_UTIL_PAYMENT"
   mobileNumber   = "xxxxxxxx",
   iPayCustomerID = "x"
 )
@@ -80,20 +80,10 @@ VodQaSDK.openSavedTopup(
   savedBillId    = "x"
 )
 ```
-6.3 Digital Vouchers
-```
-VodQaSDK.startDigitalVouchers(
-  this,
-  secretKey      = "your_secret_key",
-  serviceCode    = "INT_VOUCHER",
-  mobileNumber   = "xxxxxxxx",
-  iPayCustomerID = "x",
-)
-```
 
 Parameters:
 - secretKey: Your API secret key.
-- serviceCode: like "INT_TOP_UP", "INT_VOUCHER".
+- serviceCode: like "INT_TOP_UP", "INT_VOUCHER", "INT_UTIL_PAYMENT".
 - mobileNumber: Sender’s phone number.
 - iPayCustomerID: Your iPay customer identifier.
 - savedBillId (only for Saved Top‑up): ID of the transaction to display.
